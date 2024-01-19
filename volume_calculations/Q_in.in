@@ -1,0 +1,21 @@
+$molecule
+0 2
+ C        -0.7264086093   -0.6702611369    0.3710498677
+ O        -0.8918688681   -1.6616943626    1.2284492446
+ O        -1.2592468052   -0.4519952726   -0.6766610984
+ H        -1.5777131174   -2.2801044278    0.8872282862
+$end
+
+$rem
+   BASIS = 6-311++G(2df,2p)
+   GUI = 2
+   JOB_TYPE = Optimization
+   METHOD = wB97M-V
+   SCF_ALGORITHM = DIIS_GDM
+   MAX_SCF_CYCLES = 400
+   GEOM_OPT_MAX_CYCLES = 150 
+   SCF_CONVERGENCE = 7
+   THRESH = 12
+   UNRESTRICTED = 1
+   Solvent_method = SMD
+$end
