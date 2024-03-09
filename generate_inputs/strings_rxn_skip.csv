@@ -1,0 +1,38 @@
+s_rxn_replace,replace,"0 calc kientics, 1 diffusion, 2 zero, 3 auxillary, f-fit, e-exp"
+OH combine,1,smol
+2OOH -> H2O2 + O2,0,
+OOH OOn transfer,1,exp
+OH OOH trap,0,
+H2O2 OH HT,0,
+glyoxal + OH HT,0,
+glyoxal rad + O2 -> peroxyl rad,1,smol
+gloxylic acid OH HT,0,
+O2 add glyoxylic acid rad,0,
+glyoxylate OH rad HT,0,
+glyoxylate rad O2 add,1,smol
+O2 add dihydroxymethyl,1,smol
+formic acid HT OH,0,
+formic acid rad O2 add,0,
+formate HT OH,0,
+COO electron transfer O2,1,exp
+glyoxylic acid dehydrate,2,exp
+glyoxylate dehydrate,2,exp
+glyoxylate acid H2O2,2,exp
+oxilic acid,0,
+oxalate OH e-transfer,2,exp
+hydrogen oxalate OH e-transfer,2,exp
+CO2 hydrate,2,exp
+hydrogen carbonate OH ract,0,
+hydrogen carbonate rate H2O2 rxn,2,exp
+glyoxal dehydrate,2,exp
+glyoxal_monohyd_superoxide_add,0,
+glyoxal_monohyd_superoxide_add_Hp_transfer,2,fit
+glyoxal_monohyd_peroxyl_disprop,2,exp
+glyoxal_monohyd_oxyl_frag,0,
+glyoxylate deprot,2,
+oxalic acid deprot,2,
+hydrogen oxalate deprot,2,
+formic acid,2,
+carbonic acid deprot p2,2,
+H2O,2,
+OOH deprot,2,
