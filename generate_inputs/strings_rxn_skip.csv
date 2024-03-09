@@ -25,8 +25,7 @@ CO2 hydrate,2,exp
 hydrogen carbonate OH ract,0,
 hydrogen carbonate rate H2O2 rxn,2,exp
 glyoxal dehydrate,2,exp
-glyoxal_monohyd_superoxide_add,0,
-glyoxal_monohyd_superoxide_add_Hp_transfer,2,fit
+glyoxal_monohyd_superoxide_add,2,fit
 glyoxal_monohyd_peroxyl_disprop,2,exp
 glyoxal_monohyd_oxyl_frag,0,
 glyoxylate deprot,2,
