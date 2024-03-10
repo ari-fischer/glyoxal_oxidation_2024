@@ -5,15 +5,22 @@ Output files for stationary points needed to generate kinetic and thermodynamic 
 Energy.txtfreq.outFrequencies.txtG_cds.txtgeom_opt.outH_out.txtinertia.txtout_head.txtS_out.txtvolume.txt
 ---
 
-repository of DFT calculations needed for manuscript but not included in the kientic model including calculations for polymerization, elementary steps of addition-elimination reactions, and superoxide addition
+Repository of DFT calculations needed to calculate kinetic and thermodynamic coefficients for the kientic model of glyoxal oxidation. Read by the "get_export_ks_DFT_rxn_temp.ipynb" Jupyter notebook. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
+---
+/generate_inputs/DFT_paths_gly_ox_March2024_local.csv
+---
+
+Repository of DFT calculations needed for manuscript but not included in the kientic model including calculations for polymerization, elementary steps of addition-elimination reactions, and superoxide addition. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
 ---
 /DFT_files/DFT_paths_gly_ox_March2024_extra.csv
 ---
 
-Directory of paths to stationary point calculations used in jupyter notebooks:
+Repository of DFT calculations used to test the effect of basis set size on calculated kinetic parameters. The files are located in the "/DFT_files/basis_set_convergence" directory.
+--//
 ---
-/generate_inputs/DFT_paths_gly_ox_March2024_local.csv
----
+
+
+
 
 Jupyter notebook and dependences to generate the input files for microkinetic model implemented in MATLAB and outputs at LFUS (20 kHz) and HFUS (580 kHz)
 --Code_and_inputs--
