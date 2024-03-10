@@ -10,16 +10,13 @@ Datasets:
 
 •	QChem output files for geometry optimization, vibrational frequencies, transition-state search, and intrinsic reaction coordinate.
 
-•	Python script for generating thermodynamic parameters using outputs from QChem
-
-•	MatLab code for simulating reactions with the model
 
 
 Codes:
 
 •	Python script to calculate molecular volumes
 
-•	Jupyter notebook for generating parameters for the reactor model
+•	Jupyter notebook for generating parameters for the kinetic model
 
 •	Python script for generating thermodynamic parameters using outputs from QChem
 
