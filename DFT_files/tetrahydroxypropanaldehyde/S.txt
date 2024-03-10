@@ -1,0 +1,4 @@
+   Translational Entropy:        40.286  cal/mol.K
+   Rotational Entropy:           29.032  cal/mol.K
+   Vibrational Entropy:          33.871  cal/mol.K
+   Total Entropy:               103.189  cal/mol.K

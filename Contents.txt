@@ -1,0 +1,59 @@
+Summary of contents in the repository
+
+Output files for stationary points needed to generate kinetic and thermodynamic parameters. Files include:
+---
+Energy.txtfreq.outFrequencies.txtG_cds.txtgeom_opt.outH_out.txtinertia.txtout_head.txtS_out.txtvolume.txt
+---
+
+repository of DFT calculations needed for manuscript but not included in the kientic model including calculations for polymerization, elementary steps of addition-elimination reactions, and superoxide addition
+---
+/DFT_files/DFT_paths_gly_ox_March2024_extra.csv
+---
+
+Directory of paths to stationary point calculations used in jupyter notebooks:
+---
+/generate_inputs/DFT_paths_gly_ox_March2024_local.csv
+---
+
+Jupyter notebook and dependences to generate the input files for microkinetic model implemented in MATLAB and outputs at LFUS (20 kHz) and HFUS (580 kHz)
+--Code_and_inputs--
+[path: "/generate_inputs/"]
+get_export_ks_DFT_rxn_temp.ipynb
+strings_rxn_skip.csvreactions_gly_ox_model.csv
+thermo_parameters.py
+species_vols.csv
+---
+
+--outputs--
+[path: "/generate_inputs/outputs_HFUS", "/generate_inputs/outputs_LFUS"]
+rxn_extents.csv
+thermo_outputs_LFUS.csv
+thermo_outputs_HFUS.csv
+rxn_coeffs.csv
+rxn_ks.csv
+smiles.csv
+rxn_kinetics.csv
+---
+
+
+Microkinetic model implemented in MATLAB for generating reaction rates and trends at low frequency (LFUS-20 kHz) and high frequency (HFUS-580 kHz)
+--LFUS--//
+
+---
+
+--HFUS--//
+
+plot_C2_contour.m
+rxn_network_pH.m
+---
+
+Kinetic and thermodynamic coefficients evaluated at 315 K and 325 K and inputs to MKM model
+--315 K--
+[path: "/generate_inputs/outputs_LFUS/"]
+rxn_kinetics.csv
+---
+--325 K--
+[path: "/generate_inputs/outputs_HFUS/"]
+outputs_HFUS/rxn_kinetics.csv
+---
+

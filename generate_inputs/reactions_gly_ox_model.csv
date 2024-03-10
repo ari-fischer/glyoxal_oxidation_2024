@@ -28,7 +28,7 @@ list of reactants (Ri) and products (P1) in smiles format,reaction_ID,R1,R2,R3,P
 27,glyoxal_monohyd_superoxide_add_QE_with_proton_transfer,[OH][CH]([OH])[CH]=[O],[O][O-],[OH2],[OH][CH]([OH])[CH]([O][O])[OH],[OH-],,
 29,glyoxal_monohyd_peroxyl_disprop,[OH][CH]([OH])[CH]([O][O])[OH],[OH][CH]([OH])[CH]([O][O])[OH],,[OH][CH]([OH])[CH]([O])[OH],[OH][CH]([OH])[CH]([O])[OH],[O][O],
 30,glyoxal_monohyd_oxyl_frag,[OH][CH]([OH])[CH]([O])[OH],,,[CH]([OH])=[O],[CH]([OH])[OH],,
-31,glyoxylate deprot,[OH][CH]([OH])[C](=[O])[OH],[OH2],,[OH][CH]([OH])[C](=[O])[O-],[OH3+],,
+31,glyoxylic acid deprot,[OH][CH]([OH])[C](=[O])[OH],[OH2],,[OH][CH]([OH])[C](=[O])[O-],[OH3+],,
 32,oxalic acid deprot,[OH][C](=[O])[C](=[O])[OH],[OH2],,[OH][C](=[O])[C](=[O])[O-],[OH3+],,
 33,hydrogen oxalate deprot,[OH][C](=[O])[C](=[O])[O-],[OH2],,[O-][C](=[O])[C](=[O])[O-],[OH3+],,
 34,formic acid,[CH]([OH])=[O],[OH2],,[CH]([O-])=[O],[OH3+],,
