@@ -1,7 +1,11 @@
 Contents of this repository support the results presented in: (link pending)
 
 
+
 ----Complete details of contents pending----
+
+
+
 Datasets:
 
 •	Spreadsheet containing rate constants used at 315 K and 325 K and Smolukowski rate constants
@@ -11,6 +15,7 @@ Datasets:
 •	Spreadsheet containing molecular volumes
 
 •	QChem output files for geometry optimization, vibrational frequencies, transition-state search, and intrinsic reaction coordinate.
+
 
 
 
