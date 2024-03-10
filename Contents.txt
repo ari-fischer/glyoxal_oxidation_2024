@@ -43,15 +43,13 @@ rxn_kinetics.csv
 ---
 
 
-Microkinetic model implemented in MATLAB for generating reaction rates and trends at low frequency (LFUS-20 kHz) and high frequency (HFUS-580 kHz)
---LFUS--//
-
+Microkinetic model implemented in MATLAB for generating reaction rates and trends at low frequency (LFUS-20 kHz) and high frequency (HFUS-580 kHz). The driver scripts are "glyoxal_oxidation_driver_LFUS.m" and "glyoxal_oxidation_driver_HFUS.m". Others dependences are functions called by driver.
+--LFUS--
+exp_data_LFUS.csvget_error.mglyoxal_oxidation_driver_LFUS.mrates_conv_plot.mrates_out.mrun_DRC.mrun_ode.mrxn_network.m
 ---
 
---HFUS--//
-
-plot_C2_contour.m
-rxn_network_pH.m
+--HFUS--
+exp_data_HFUS.csvget_error.mglyoxal_oxidation_driver_HFUS.mplot_C2_contour.mrates_conv_plot.mrates_out.mrun_DEC.mrun_ode.mrxn_network_pH.mrxn_network.m
 ---
 
 Kinetic and thermodynamic coefficients evaluated at 315 K and 325 K and inputs to MKM model
