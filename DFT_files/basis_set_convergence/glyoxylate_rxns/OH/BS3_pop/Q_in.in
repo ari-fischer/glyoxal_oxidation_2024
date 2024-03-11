@@ -1,0 +1,16 @@
+$molecule
+0 2
+ O        -1.7005575682    1.7829465742    0.6678097587
+ H        -0.9876783031    2.4000545673    0.4231752626
+$end
+
+$rem
+   BASIS = 6-311++G(3df,2p)
+   JOB_TYPE = SP
+   METHOD = wB97M-V
+   SCF_ALGORITHM = DIIS_GDM
+   MAX_SCF_CYCLES = 400
+   SCF_CONVERGENCE = 7
+   THRESH = 12
+   Solvent_method = SMD
+$end

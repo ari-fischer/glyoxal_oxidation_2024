@@ -1,0 +1,16 @@
+$molecule
+0 3
+ O        -3.3016872316    4.4705652735    0.5345536189
+ O        -4.3059970684    3.9312274265    0.1697464811
+$end
+
+$rem
+   BASIS = def2-TZVPPD
+   JOB_TYPE = SP
+   METHOD = wB97M-V
+   SCF_ALGORITHM = DIIS_GDM
+   MAX_SCF_CYCLES = 400
+   SCF_CONVERGENCE = 7
+   THRESH = 12
+   Solvent_method = SMD
+$end

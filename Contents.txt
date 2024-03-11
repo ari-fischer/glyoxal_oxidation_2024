@@ -1,28 +1,34 @@
-Summary of contents in the repository
+--Summary of contents in the repository--
 
-Output files for stationary points needed to generate kinetic and thermodynamic parameters. Files include:
+>>Output files for stationary points needed to generate kinetic and thermodynamic parameters. Files include:
 ---
 Energy.txtfreq.outFrequencies.txtG_cds.txtgeom_opt.outH_out.txtinertia.txtout_head.txtS_out.txtvolume.txt
 ---
 
-Repository of DFT calculations needed to calculate kinetic and thermodynamic coefficients for the kientic model of glyoxal oxidation. Read by the "get_export_ks_DFT_rxn_temp.ipynb" Jupyter notebook. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
+>>Repository of DFT calculations needed to calculate kinetic and thermodynamic coefficients for the kientic model of glyoxal oxidation. Read by the "get_export_ks_DFT_rxn_temp.ipynb" Jupyter notebook. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
 ---
 /generate_inputs/DFT_paths_gly_ox_March2024_local.csv
 ---
 
-Repository of DFT calculations needed for manuscript but not included in the kientic model including calculations for polymerization, elementary steps of addition-elimination reactions, and superoxide addition. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
+>>Repository of DFT calculations needed for manuscript but not included in the kientic model including calculations for polymerization, elementary steps of addition-elimination reactions, and superoxide addition. Files located in "/DFT_files" directory. Structure names, SMILES strings, and their directories are listed in:
 ---
 /DFT_files/DFT_paths_gly_ox_March2024_extra.csv
 ---
 
-Repository of DFT calculations used to test the effect of basis set size on calculated kinetic parameters. The files are located in the "/DFT_files/basis_set_convergence" directory.
---//
+>>Repository of DFT calculations used to test the effect of basis set size on calculated kinetic parameters. The files are located in the "/DFT_files/basis_set_convergence" directory.
+
+>>DFT calculation for transition state for glyoxal radical dehydration
+---
+/DFT_files/TS_H2O_add_glycolic_rad
+---
+
+>>misc. IRC calculations not completed after frequency calc for TS structure
+---
+/DFT_files/IRC_calculations
 ---
 
 
-
-
-Jupyter notebook and dependences to generate the input files for microkinetic model implemented in MATLAB and outputs at LFUS (20 kHz) and HFUS (580 kHz)
+>>Jupyter notebook and dependences to generate the input files for microkinetic model implemented in MATLAB and outputs at LFUS (20 kHz) and HFUS (580 kHz)
 --Code_and_inputs--
 [path: "/generate_inputs/"]
 get_export_ks_DFT_rxn_temp.ipynb
@@ -43,7 +49,7 @@ rxn_kinetics.csv
 ---
 
 
-Microkinetic model implemented in MATLAB for generating reaction rates and trends at low frequency (LFUS-20 kHz) and high frequency (HFUS-580 kHz). The driver scripts are "glyoxal_oxidation_driver_LFUS.m" and "glyoxal_oxidation_driver_HFUS.m". Others dependences are functions called by driver.
+>>Microkinetic model implemented in MATLAB for generating reaction rates and trends at low frequency (LFUS-20 kHz) and high frequency (HFUS-580 kHz). The driver scripts are "glyoxal_oxidation_driver_LFUS.m" and "glyoxal_oxidation_driver_HFUS.m". Others dependences are functions called by driver.
 --LFUS--
 exp_data_LFUS.csvget_error.mglyoxal_oxidation_driver_LFUS.mrates_conv_plot.mrates_out.mrun_DRC.mrun_ode.mrxn_network.m
 ---
@@ -52,7 +58,7 @@ exp_data_LFUS.csvget_error.mglyoxal_oxidation_driver_LFUS.mrates_conv_plot.m
 exp_data_HFUS.csvget_error.mglyoxal_oxidation_driver_HFUS.mplot_C2_contour.mrates_conv_plot.mrates_out.mrun_DEC.mrun_ode.mrxn_network_pH.mrxn_network.m
 ---
 
-Kinetic and thermodynamic coefficients evaluated at 315 K and 325 K and inputs to MKM model
+>>Kinetic and thermodynamic coefficients evaluated at 315 K and 325 K and inputs to MKM model
 --315 K--
 [path: "/generate_inputs/outputs_LFUS/"]
 rxn_kinetics.csv

@@ -1,0 +1,10 @@
+grep "basis functions" BS1/OUT.out | tail -1
+grep "basis functions" BS2/OUT.out | tail -1
+grep "basis functions" BS3_pop/OUT.out | tail -1
+grep "basis functions" OUT.out | tail -1
+
+grep "basis functions" BS3_def/OUT.out | tail -1
+grep "basis functions" BS4/OUT.out | tail -1
+grep "basis functions" BS5_def/OUT.out | tail -1
+grep "basis functions" BS6_def/OUT.out | tail -1
+

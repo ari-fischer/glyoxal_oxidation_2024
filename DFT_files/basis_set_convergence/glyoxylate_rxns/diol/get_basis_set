@@ -1,0 +1,10 @@
+grep "BASIS" BS1/OUT.out | tail -1
+grep "BASIS" BS2/OUT.out | tail -1
+grep "BASIS" BS3_pop/OUT.out | tail -1
+grep "BASIS" OUT.out | tail -1
+
+grep "BASIS" BS3_def/OUT.out | tail -1
+grep "BASIS" BS4/OUT.out | tail -1
+grep "BASIS" BS5_def/OUT.out | tail -1
+grep "BASIS" BS6_def/OUT.out | tail -1
+
