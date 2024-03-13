@@ -1,31 +1,5 @@
-Contents of this repository support the results presented in: (link pending)
+This repository provides datasets and original codes that support the results presented in: "Harnessing ultrasound-derived hydroxyl radicals for the selective oxidation of aldehyde functions."
 
+A description of the contents, as quoted from the main text of the article, is:
 
-
-----Complete details of contents pending----
-
-
-
-Datasets:
-
-•	Spreadsheet containing rate constants used at 315 K and 325 K and Smolukowski rate constants
-
-•	Spreadsheet containing reaction enthalpies, entropies, and free energies
-
-•	Spreadsheet containing molecular volumes
-
-•	QChem output files for geometry optimization, vibrational frequencies, transition-state search, and intrinsic reaction coordinate.
-
-
-
-
-Codes:
-
-•	Python script to calculate molecular volumes
-
-•	Jupyter notebook for generating parameters for the kinetic model
-
-•	Python script for generating thermodynamic parameters using outputs from QChem
-
-•	MatLab code for simulating reactions with the model
-
+"These datasets and original codes include: DFT output files for stationary points needed to generate kinetic and thermodynamic parameters, for the basis set convergence test, and for and additional calculations reported; the Jupyter notebook and dependences to generate the input files for microkinetic model implemented in MATLAB and outputs at LFUS (20 kHz) and HFUS (580 kHz); the microkinetic model implemented in MATLAB for generating reaction rates and trends; the kinetic and thermodynamic coefficients evaluated at 315 K and 325 K and inputs to MKM model; and the python code for calculating van der Waals volumes."
