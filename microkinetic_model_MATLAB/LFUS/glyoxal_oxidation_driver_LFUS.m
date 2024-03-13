@@ -14,15 +14,9 @@ global tspan C0s_nd ts ind_glyox_n ind_glyox C_gly0 ind_gly ind_ox ind_fit... %r
         ind_ox_n1 ind_ox_n2 ind_form ind_form_n ydata ks_nd_fit n_OH_0_fit ... %run_ODE
         ind_glyoxalate_dehyd ind_glyox_dehyd ind_gly_dehyd ...%run_ODE
         extents coeffs ind_OH ind_O2 ind_H2O ind_H3O l_ks ... rxn_network
+        ind_CO2 ind_bicarb ind_carbonic
 
 
-%global trials    ...
-%    EQ_index Keqs EQ_extents C_OHn CB_ind ind_OHn pH_fin ...
-%    C_N ind_N AB_index ind_O ind_fit1 ind_fit2 l_ks ...
-%      ind_glyox_dehyd ind_glyoxalate_dehyd ...
-%    ind_CO2 ind_bicarb ind_carbonic ind_gly_dehyd
-% for run_ODE
-    
 
 %local path to folder containing experimental values from CRNS
 path_exp = "/Users/arifischer/Documents/NTU_research/glyoxal_oxidation_modeling_paper/Model/MKM_model_glyoxal_mechanism/init_regress/";
@@ -576,12 +570,12 @@ S_C2 = r_C2s_out./r_forms_out
 
 %% Figure S9 reactions that consume OH
 %list of reactions that involve OH
-% 1, 4, 5, 6, 9, 12, 17, 20, 25, 26, 27, 29
+% 1, 4, 5, 6, 8, 10, 13, 15, 20, 21, 22, 24
 %rates of elementary steps to export
 % OH-OH; OH+OOH, OH+H2O2, gly+OH, glyox+OH, glyox- + OH, formic+OH,
 % formate+OH, oxalic +OH, oxalate+OH, Hoxalate+OH, bicarbonate+OH
 
-get_OHs = [1, 4, 5, 6, 9, 12, 17, 20, 25, 26, 27, 29]
+get_OHs = [1, 4, 5, 6, 8, 10, 13, 15, 20, 21, 22, 24]
 rates_OH_out = rates_matrix(:,get_OHs)./n_OH_0_fit
 [gly_cons,rates_OH_out]
 
