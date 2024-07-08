@@ -86,9 +86,24 @@ def collect_E(df):
                 n_im = np.sum(vibs[0]<0)
             n_ims = np.append(n_ims,n_im)
                 
-            #moments of inertia
+            #get moment of inertia    
             I_iner = pd.read_csv(lp+'/inertia.txt',skiprows=0,header=None,delim_whitespace=True).to_numpy()
-            
+            I_iner = I_iner[0] #amu / bohr
+
+            #get molecular mass
+            M_mass = pd.read_csv(lp+'/M_mass.txt',skiprows=0,header=None,delim_whitespace=True).to_numpy()
+            m = M_mass[0][2]*1.67377E-27 #amu to kg
+
+            #get symmetry number:
+            sym = pd.read_csv(lp+'/Sym.txt',skiprows=0,header=None,delim_whitespace=True).to_numpy()
+            sigma = sym[0][4] #amu / bohr
+
+            #list of linear rotors in dataset
+            linear = df['Smiles'][i] in list(['[O][O-]','[O][O]','[OH]','[OH-]','[O]=[C]=[O]'])
+            #find the one principle moment of inertia for a linear molecule
+            if linear:
+                I_iner = np.max(I_iner)
+
             #apply threshold for low wavenumber vib modes
             vibs[vibs<100]=100 #in cm01
 
@@ -103,45 +118,48 @@ def collect_E(df):
             H_vib = h_ev*v_hz*np.exp(-h_ev*v_hz/k_ev/T)/(1-np.exp(-h_ev*v_hz/k_ev/T))
 
             #populate table with S H and ZPE values
-            if df['Calc'][i][0:2]=='TS': #TS
+            if df['Calc'][i][0:2]=='TS':
                 #for TS excluding one of the modes corresponding to the direction along the rxn coordiante. TS needs to be in the folder name
                 S_vec = np.append(S_vec,np.sum(np.sum(S_vibs))-S_vibs[0][0]) 
                 H_vec = np.append(H_vec,np.sum(np.sum(H_vib))-H_vib[0][0]) 
                 ZPE_vec = np.append(ZPE_vec,np.sum(np.sum(ZPE))-ZPE[0][0]) 
-                
-            else: #minima
+                    
+            else:
                 #for minima keep all modes
                 S_vec = np.append(S_vec,np.sum(np.sum(S_vibs))) 
                 H_vec = np.append(H_vec,np.sum(np.sum(H_vib))) 
                 ZPE_vec = np.append(ZPE_vec,np.sum(np.sum(ZPE))) 
-            
-            # H rot and trans from QChem
-            df_H = pd.read_csv(lp + '/H_out'  +'.txt',skiprows=0,header=None,delim_whitespace=True)*4.184
-            # S trans, rot, vib, tot from QChem
-            df_S = pd.read_csv(lp + '/S_out'  +'.txt',skiprows=0,header=None,delim_whitespace=True)*4.184
-            
-            #populate the table
-            #https://cccbdb.nist.gov/thermox.asp
-            #for non-lilnear molecules (need to change for OH and O2)
-            H_rot = 3/2*R*T/1000 # kJ/mol 
-            #for polyatomic gas (diff for H)
-            H_trans = 5/2*R*T/1000#df_H.to_numpy()[0] # kJ/mol
-
-            #from QChem output
-            S_rot_ig = df_S.to_numpy()[1] # J/mol/K     
-            S_trans = df_S.to_numpy()[0] # J/mol/K   
-
-            #Get electronic entropy from spin multiplicity. Read out_head (with charge and spin info)
+                
+            #modified in June 2024 to calculate linear and nonlinear rotors separately and at reaction temperature
+            if linear:
+                B = h/8/np.pi/np.pi/(I_iner*(5.29177210903e-11**2)*1.66053907e-27)
+                H_rot = R_ig*T # kJ/mol 
+                #joules 
+                S_rot_ig = R_ig*1000*(np.log(k_B*T/h/sigma/B)+1)
+                   
+            else: #polyatomic
+                H_rot = 3/2*R_ig*T # kJ/mol 
+                A = h/8/np.pi/np.pi/(I_iner[0]*(5.29177210903e-11**2)*1.66053907e-27)
+                B = h/8/np.pi/np.pi/(I_iner[1]*(5.29177210903e-11**2)*1.66053907e-27)
+                C = h/8/np.pi/np.pi/(I_iner[2]*(5.29177210903e-11**2)*1.66053907e-27)
+                H_rot = 3/2*R_ig*T# kJ/mol   
+                #joules 
+                S_rot_ig = R_ig*1000*(3/2*np.log(k_B*T/h)-1/2*np.log(A*B*C/np.pi)-np.log(sigma)+3/2)
+            #joules
+            S_trans = R_ig*1000*(3/2*np.log(2*np.pi*m/h/h)+5/2*np.log(k_B*T)-np.log(1E5)+5/2) # 
+            #kilojoules
+            H_trans = 5/2*R_ig*T #df_H.to_numpy()[0] # kJ/mol
+                
             with open(df['path_l_geom'][i]+'/out_head.txt') as f:
                 lines = f.readlines()
             M = int(lines[-1][-2])        
-        
+            
             if df['Calc'][i]=='OH':
-                S_elec = R*np.log(4)
+                S_elec = R_ig*1000*np.log(4)
             else:
-                S_elec = R*np.log(M)
+                S_elec = R_ig*1000*np.log(M)
 
-            #append vectors
+                
             H_rot_vec = np.append(H_rot_vec,H_rot)
             H_trans_vec = np.append(H_trans_vec,H_trans)
             S_rot_ig_vec = np.append(S_rot_ig_vec,S_rot_ig)

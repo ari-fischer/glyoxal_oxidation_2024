@@ -1,0 +1,31 @@
+--Description of updates to repository--
+
+**8 July 2024**
+
+Additional files extracted from freq.out:
+	"M_mass.txt" -- molecular mass
+ 	"Sym.txt" -- rotational number
+
+
+thermo_parameters.py updated the "collect_freq(df,T_C)" function to calculate rotational and translational entropy at reaction temperature and to correct the rotational enthalpy calculation for linear rotors.
+
+
+Updated the following outputs after re-calculating kinetic and thermodynamic parameters with the updated "collect_freq(df,T_C)" function:
+	in "glyoxal_oxidation_2024/generate_inputs/outputs_LFUS";
+		rxn_kinetics.csv
+		rxn_ks.csv
+		thermo_outputs_LFUS.csv
+	in "glyoxal_oxidation_2024/generate_inputs/outputs_HFUS";
+		rxn_kinetics.csv
+		rxn_ks.csv
+		thermo_outputs_HFUS.csv
+	"glyoxal_oxidation_2024/kinetic_thermo_coefficients/rxn_kinetics_298.csv"
+
+
+Updated the "ks(19)" parameter to reflect new self-consistent value in:
+	"glyoxal_oxidation_2024/microkinetic_model_MATLAB/LFUS/glyoxal_oxidation_driver_LFUS.m"
+
+
+Updated the "ks(27)" parameter to reflect new self-consistent value in:
+	/Users/arifischer/Documents/GitHub/glyoxal_oxidation_2024/microkinetic_model_MATLAB/HFUS/glyoxal_oxidation_driver_HFUS.m
+	

@@ -237,7 +237,7 @@ ks(25) = k_carbonate_r_H2O2 ;
 ks(25+l_ks/2) = 0;
 
 % lumped O2- addition to glyoxyl monohydrate and proton transfer 
-ks(27) = 2E4*0.912544311;
+ks(27) =  2E4*0.8580; %updated to self-consistent value on 8 July 2024
 ks(27+l_ks/2) = 0;
 
 % O-transfer for peroxyl radicals from value reported for ethanol-derived

@@ -226,7 +226,7 @@ ks(26) = k_dehyd_glyoxal;
 ks(26+l_ks/2)= k_dehyd_glyoxal*K_dehyd_glyoxal;
 
 %glyoxylic acid + H2O2 reaction
-ks(19) = k_glyoxn_H2O2*0.47126955;
+ks(19) = k_glyoxn_H2O2*0.126425356; %updated to new self-consistent value on 8 July 2024
 ks(19+l_ks/2) = 0; 
 
 ks(21) = k_oxalate_eT;
