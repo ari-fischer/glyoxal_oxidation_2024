@@ -499,7 +499,7 @@ mean_value = mean([C_glyox;C_ox;C_form])
 if param_analy ==1
     %print for table 1
     %average glyoxal consumption rate from experiments
-    A = mean(C_gly_cons([1,5,7,8])./ts([1,5,7,8]))
+    A = mean(C_gly_cons./ts)
     %mean percentage error
     MAE/(mean_value*1000) % mean percentage error
     
