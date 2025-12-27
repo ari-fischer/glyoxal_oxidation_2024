@@ -11,3 +11,7 @@ Version history:
 zip_8_July_2024.zip compiled 8 July 2024.
 
 zip_v1.zip compiled 13 March 2024.
+
+Update log:
+
+Added missing "t_select" function to the microkinetic model on 27 Dec 25
